@@ -20,11 +20,13 @@ export class Firebase {
   constructor() {
     const firebaseConfig = {
       apiKey: key,
-      authDomain: 'get-starting-environment.firebaseapp.com',
-      projectId: 'get-starting-environment',
-      storageBucket: 'get-starting-environment.firebasestorage.app',
-      messagingSenderId: '223284266927',
-      appId: '1:223284266927:web:46cfc8da479d5e5695d15a',
+      authDomain: "ebook-moura.firebaseapp.com",
+      projectId: "ebook-moura",
+      storageBucket: "ebook-moura.firebasestorage.app",
+      messagingSenderId: "523337302546",
+      appId: "1:523337302546:web:d9b7662a7dd4ea6af9cecb"
+};
+
     };
     // Initialize Firebase
     this.app = initializeApp(firebaseConfig);
