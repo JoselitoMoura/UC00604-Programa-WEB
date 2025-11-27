@@ -27,7 +27,7 @@ export class Firebase {
       appId: "1:523337302546:web:d9b7662a7dd4ea6af9cecb"
 };
 
-    };
+    
     // Initialize Firebase
     this.app = initializeApp(firebaseConfig);
     this.auth = getAuth(this.app);

@@ -1,13 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
-
-
-
 
 :root {
     --primary-doc-color: linear-gradient(68.15deg, #1e293b 14.62%, #01060f 85.61%);;
@@ -32,7 +26,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     --main-line-height: 1.6;
     --main-font-size: 3rem;
     --outline: 2px, solid rgba(0,123,255,0.3);
-
 
   }
 
