@@ -1,0 +1,61 @@
+/* Container principal */
+.uc-container {
+  padding: 1.5rem;
+  margin: auto;
+  max-width: 900px;
+}
+
+/* Cabeçalho com título */
+.uc-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.uc-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary-text); /* definido no style.css do teu projeto */
+}
+
+.uc-code {
+  font-size: 1rem;
+  color: var(--secondary-text);
+}
+
+/* Seções internas */
+.uc-description,
+.uc-objectives,
+.uc-skills {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  background-color: var(--surface-bg);
+}
+
+.uc-description h2,
+.uc-objectives h2,
+.uc-skills h2 {
+  font-size: 1.25rem;
+  color: var(--primary-text);
+}
+
+/* Listas */
+.uc-objectives ul,
+.uc-skills ul {
+  list-style: inside disc;
+  margin-top: 0.5rem;
+  color: var(--body-text);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .uc-title {
+    font-size: 1.75rem;
+  }
+
+  .uc-description,
+  .uc-objectives,
+  .uc-skills {
+    padding: 0.75rem;
+  }
+}
