@@ -1,1 +1,27 @@
-<p>authentication works!</p>
+<div class="login-card">
+    <h2>SignIn</h2>
+    <p>Favor Atentique para continuar</p>
+    <!-- botão de reset -->
+    <button (click)="this.signinForms.reset()" class="clean-button" >Limpar Campos</button>
+
+    <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
+
+        <!-- imput do email-->
+         <label for="email">E-Mail</label>
+        <input type="email" id="email" name="email" placeholder="Digite seu email" formControlName="email" >
+
+        <!-- imput do password-->
+         <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Digite sua senha" formControlName="password" >
+
+        <!-- botões -->
+         <div class="button-group">
+            <button type="button" class="go-back">Voltar</button>
+            <button type="submit" class="sign-in">Signin</button>
+         </div>
+
+
+      <!-- fim do form -->
+    </form>
+
+</div>

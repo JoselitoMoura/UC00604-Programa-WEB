@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/uc00604-programa-web/browser/",
+    "public": "dist/uc00604/browser/",
     "ignore": [
       "firebase.json",
       "**/.*",
