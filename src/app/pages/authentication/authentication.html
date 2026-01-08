@@ -1,27 +1,67 @@
 <div class="login-card">
     <h2>SignIn</h2>
-    <p>Favor Atentique para continuar</p>
+    <p>Favor Autentique para continuar </p>
     <!-- botão de reset -->
-    <button (click)="this.signinForms.reset()" class="clean-button" >Limpar Campos</button>
+    <button (click)="this.signinForms.reset()" class="clean-button"> Limpar Campos</button>
 
     <form [formGroup]="this.signinForms" (ngSubmit)="onSubmit()">
 
-        <!-- imput do email-->
+        <!-- input do email -->
          <label for="email">E-Mail</label>
-        <input type="email" id="email" name="email" placeholder="Digite seu email" formControlName="email" >
+        <input type="email" id="email" name="email" placeholder="Digite seu email" formControlName="email">
+        @if (this.signinForms.invalid && this.signinForms.get("email")?.touched) {
 
-        <!-- imput do password-->
-         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Digite sua senha" formControlName="password" >
+          @if (this.signinForms.hasError('required',"email")) {
+            <div class="error-message">
+              <small>Campo Obrigatório</small>
+            </div>
+          }
 
-        <!-- botões -->
+          @if (this.signinForms.getError("email", "email")) {
+            <div class="error-message">
+              <small>Erro no Padrão do Email</small>
+            </div>
+          }
+
+        }
+
+
+
+        <!-- input do password -->
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"  placeholder="Digite sua senha" formControlName="password">
+
+        @if (this.signinForms.valid && this.signinForms.get("password")?.touched) {
+
+          @if (this.signinForms.get("password")?.getError("required")) {
+            <div class="error-message">
+              <small>Campo Obrigatório</small>
+            </div>
+          }
+
+        }
+
+        @if (this.signinForms.hasError("minlength", "password")) {
+          <div class="error-message">
+              <small>Campo tem que ter no mínimo 3 caracteres</small>
+          </div>
+        }
+        <!-- Usando o GetError-->
+        @if (this.signinForms.get("password")?.getError("maxlength")) {
+          <div class="error-message">
+              <small>Campo deve ter no máximo 10 caracteres</small>
+          </div>
+        }
+
+        <!-- Botoes -->
          <div class="button-group">
             <button type="button" class="go-back">Voltar</button>
             <button type="submit" class="sign-in">Signin</button>
+
          </div>
 
 
-      <!-- fim do form -->
-    </form>
 
+        <!-- fim do form -->
+    </form>
 </div>

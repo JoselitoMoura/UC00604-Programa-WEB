@@ -98,7 +98,8 @@ button {
 
 .sign-in {
   background-color: var(--primary-color);
-  color: var(--text-color-light);
+  /*color: var(--text-color-light);*/
+  color: var(--text-color);
 }
 
 .sign-in:hover {
@@ -111,7 +112,8 @@ button {
 }
 
 .go-back {
-  background-color: var(--background-color-sections2);
+  background-color: var(--primary-color);
+  /* background-color: var(--background-color-sections2); */
   color: var(--text-color);
 }
 

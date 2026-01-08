@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
+import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-authentication',
@@ -8,28 +8,26 @@ import { ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup } from '@angu
   templateUrl: './authentication.html',
   styleUrl: './authentication.css',
 })
+
 export class Authentication {
 
+  // variáveis
   protected signinForms!: UntypedFormGroup;
-  protected signinFormsExemplo!: UntypedFormGroup; //* Exemplo didático *//
+
+  // construtor
   constructor(private fb: UntypedFormBuilder) {
     this.signinForms = this.fb.nonNullable.group({
-      email: [''],
-      password: ['']
-    });
-/* exemplo didático */
-    this.signinFormsExemplo = this.fb.nonNullable.group({
-      email: ['paula'],
-      password: ['vasco']
+      email: ['',[Validators.required, Validators.email]], /**serve para validar o @ no email */
+      password: ['',[Validators.required, Validators.minLength(3), Validators.maxLength(10)]]
     });
 
-    /*console.log("Zelito " , this.signinFormsExemplo.value);*/
+  } // fim do construtor
+
+  onSubmit(){
+    this.signinForms.controls
+    console.log("Controls",this.signinForms.controls['email'].value)
+     console.log("Meu Forms", this.signinForms.value);
 
   }
 
-  onSubmit(){
-      console.log("Meu Forms", this.signinForms.value);
-
-    }
-
-}
+} // fim da class Authentication
